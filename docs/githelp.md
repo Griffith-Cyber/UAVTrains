@@ -71,7 +71,6 @@ git config --global user.email "你的GitHub邮箱"
 2. 选择你的GitHub账号作为目标位置
 3. 等待Fork完成
 
-![Fork按钮位置](https://docs.github.com/assets/cb-23088/images/help/repository/fork_button.png)
 
 Fork完成后，你会在自己的GitHub账号下看到一个完全相同的仓库副本。
 
@@ -98,19 +97,6 @@ git clone https://github.com/你的用户名/UAVTrains.git
 cd UAVTrains
 ```
 
-## 创建新分支
-
-在修改代码前，最好创建一个新的分支，这样可以保持主分支的干净。
-
-```bash
-# 创建并切换到新分支
-git checkout -b 你的分支名
-
-# 分支命名建议：
-# - add-chapter-1（添加第1章）
-# - fix-typo（修复拼写错误）
-# - update-readme（更新README）
-```
 
 ## 编辑文档内容
 
@@ -192,28 +178,30 @@ git commit -m "描述你的更改内容"
 # git commit -m "更新侧边栏导航"
 ```
 
-### 步骤4：推送到远程仓库
+### 步骤4：推送到远程仓库-主分支
 
 ```bash
 # 推送到你的GitHub仓库
-git push origin 你的分支名
+git push origin main
 ```
 
-## 创建Pull Request
+## 创建 Pull Request
 
-### 步骤1：访问GitHub页面
+### 步骤1：访问 GitHub 页面
 
-推送完成后，访问你的GitHub仓库页面，你会看到提示创建Pull Request。
+推送完成后，访问你的 GitHub 仓库页面，通常页面顶部会出现“Create pull request”或“Compare & pull request”等提示按钮。
 
-### 步骤2：创建Pull Request
+### 步骤2：创建 Pull Request
 
-1. 点击 **Compare & pull request** 按钮
-2. 填写Pull Request标题和描述
-3. 描述你的更改内容和目的
-4. 点击 **Create pull request**
+1. 点击 **Create pull request**（可能显示为 **Compare & pull request**、**Open pull request** 或 **New pull request**，取决于你所在分支和仓库设置）
+2. 选择目标分支（通常为 `main` 或 `master`）和你当前工作分支
+3. 填写清晰的 Pull Request 标题和详细描述
+4. 可以添加 reviewers、labels、projects、milestones 等（可选）
+5. 点击 **Create pull request**
 
 ### 步骤3：等待审核
 
+项目维护者会审核你的更改，可能会提出修改建议。根据反馈进行修改后，再次推送到同一个分支，PR 会自动更新。
 项目维护者会审核你的更改，可能会提出修改建议。根据反馈进行修改后，再次提交即可。
 
 ## 实例演示
@@ -222,13 +210,8 @@ git push origin 你的分支名
 
 假设我们要为项目添加一个新的章节"无人机安全操作指南"。
 
-#### 步骤1：创建新分支
 
-```bash
-git checkout -b add-safety-guide
-```
-
-#### 步骤2：创建新文档文件
+#### 步骤1：创建新文档文件
 
 在 `docs/` 目录下创建新文件 `safety-guide.md`：
 
@@ -255,27 +238,16 @@ git checkout -b add-safety-guide
 3. 关闭电机电源
 ```
 
-#### 步骤3：更新侧边栏
 
-编辑 `_sidebar.md` 文件，添加新章节的链接：
-
-```markdown
-- [首页](README.md)
-- [第一章 无人机基础](docs/chapter1.md)
-- [第二章 飞行操作](docs/chapter2.md)
-- [无人机安全操作指南](docs/safety-guide.md)
-- [关于我们](docs/about.md)
-```
-
-#### 步骤4：提交更改
+#### 步骤2：提交更改至主分支
 
 ```bash
 git add docs/safety-guide.md _sidebar.md
 git commit -m "添加无人机安全操作指南章节"
-git push origin add-safety-guide
+git push origin main
 ```
 
-#### 步骤5：创建Pull Request
+#### 步骤3：创建Pull Request
 
 在GitHub上创建Pull Request，等待项目维护者审核。
 

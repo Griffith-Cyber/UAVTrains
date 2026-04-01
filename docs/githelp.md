@@ -147,10 +147,10 @@ docsify使用Markdown格式编写文档。以下是一些基本语法：
 - **Sublime Text**（轻量级）
 - **Notepad++**（Windows用户）
 
-## 提交更改前的准备
+## 提交前的准备
 ### 步骤1：更新侧边栏导航（可选，如果新增md文件需要更新）
 
-#### 方法一：在 `_sidebar.md` 文件中，添加新的章节到导航结构。例如：
+方法一：在 `_sidebar.md` 文件中，添加新的章节到导航结构。例如：
 
 ```markdown
 - [介绍](intro.md)
@@ -165,7 +165,12 @@ docsify使用Markdown格式编写文档。以下是一些基本语法：
     - [章节2](chapter2.md)
     - ...
 ```
-#### 方法二：直接运行 update_docs.py 程序，自动更新侧边栏导航。
+方法二：自动更新侧边栏导航。在工程目录UAVtrans下运行 update_docs.py 程序。
+
+```bash
+# 运行update_docs.py命令
+python update_docs.py
+```
 
 ### 步骤2：在 `docs/` 目录下运行docsify serve 命令，点开网页，检查更改是否生效。
 
@@ -173,7 +178,7 @@ docsify使用Markdown格式编写文档。以下是一些基本语法：
 # 运行docsify serve命令
 docsify serve
 ```
-
+#### 备注：如果没有安装docsify，需要先安装，详见 [本地使用docsify](#本地使用docsify)
 
 
 ## 提交更改
@@ -339,7 +344,7 @@ git reset --hard HEAD~1
 4. **测试更改**：在本地预览docsify网站效果
 5. **遵守规范**：遵循项目的代码规范和文档格式
 
-## 本地预览docsify网站
+## 本地使用docsify
 
 如果你想在本地预览修改后的效果：
 

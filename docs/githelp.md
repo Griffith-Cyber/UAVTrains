@@ -185,17 +185,15 @@ docs/入门实验步骤/实验xxx/pics.jpg
 方法一：在 `_sidebar.md` 文件中，添加新的章节到导航结构。例如：
 
 ```markdown
-- [介绍](intro.md)
-- [系统组成](systemoverview.md)
-- [硬件选项](hardware_options.md)
-- [快速启动](quickstart.md)
-- [入门实验步骤](入门实验步骤/readme.md)
-- [文档维护教程](githelp.md)
-- [进度记录](progress.md)
-- [其他](其他.md)
-    - [章节1](chapter1.md)
-    - [章节2](chapter2.md)
-    - ...
+- [**比赛介绍**](intro.md)
+- [**系统组成**](systemoverview.md)
+- [**硬件选项**](hardware_options.md)
+- [**快速启动**](quickstart.md)
+- [**文档维护教程**](githelp.md)
+- [**进度记录**](progress.md)
+- [**入门实验步骤**](入门实验步骤/readme.md)
+  - [实验01-无人机安全操作指南](入门实验步骤/实验xxx/step1.md)
+- [**开发教程**](开发教程/readme.md)
 ```
 方法二：自动更新侧边栏导航。在工程目录UAVtrans下运行 update_docs.py 程序。
 

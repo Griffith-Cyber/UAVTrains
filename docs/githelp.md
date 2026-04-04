@@ -365,6 +365,14 @@ git reset --soft HEAD~1
 # 撤销最后一次提交，丢弃更改
 git reset --hard HEAD~1
 ```
+### Q: 侧边栏显示异常？
+
+A: 建议执行python脚本更新侧边栏导航 ：
+```bash
+python update_sidebar.py
+```
+此外，注意文件夹的命名规范，例如不能带空格，只能使用下划线或短横线。
+
 
 ## 最佳实践
 

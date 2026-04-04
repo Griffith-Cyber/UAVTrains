@@ -148,7 +148,26 @@ def scan_folder(folder_path):
                 })
     return md_files
 
+def find_folders_with_spaces():
+    folders_with_spaces = []
+    for root, dirs, _ in os.walk(ROOT_DIR):
+        for directory in dirs:
+            if " " not in directory:
+                continue
+            folder_path = os.path.join(root, directory)
+            relative_path = os.path.relpath(folder_path, ROOT_DIR).replace('\\', '/')
+            folders_with_spaces.append(relative_path)
+    return sorted(folders_with_spaces)
+
 def main():
+    folders_with_spaces = find_folders_with_spaces()
+    if folders_with_spaces:
+        print("检测到以下文档目录名称包含空格，Docsify 侧边栏可能无法正确识别：")
+        for folder in folders_with_spaces:
+            print(f"  - docs/{folder}")
+        print("请先将以上文件夹名称中的空格改为下划线或删除空格后，再重新执行 update_docs.py。")
+        return
+
     sidebar_lines = []
     root_folders = get_root_folders()
     root_files_order = get_root_files_order()
